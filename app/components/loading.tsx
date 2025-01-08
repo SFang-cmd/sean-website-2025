@@ -99,7 +99,7 @@ function LoadingBarToCircle() {
                         width: 8px;
                         height: 8px;
                         border-radius: 9999px;
-                        transform: translate(80%, 0);
+                        transform: translate(184px, 0);
                     }
                     70% {
                         width: 48px;
