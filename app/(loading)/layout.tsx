@@ -3,5 +3,9 @@ export default function LoadingLayout({
   }: {
     children: React.ReactNode
   }) {
-    return children;
+    return (
+      <main className="flex flex-auto flex-col">
+        {children}
+      </main>
+    )
   }

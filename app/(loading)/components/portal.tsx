@@ -4,7 +4,35 @@ import { LoadingBarToCircle } from './loadingBar';
 import { jaro } from '../../ui/fonts';
 import { useRouter } from 'next/navigation';
 import { Home } from 'app/(main)/home/home';
-import Navbar from 'app/components/nav';
+import Navbar from 'app/ui/components/nav';
+
+const navItems = [
+    {
+      path: '#home',
+      name: '&Home',
+      id: 'home',
+    },
+    {
+      path: '#my-work',
+      name: 'My Work',
+      id: 'my-work',
+    },
+    {
+      path: '#academics',
+      name: 'Academics',
+      id: 'academics',
+    },
+    {
+      path: '#resume',
+      name: 'Resume',
+      id: 'resume',
+    },
+    {
+      path: '#contact',
+      name: 'Contact',
+      id: 'contact',
+    }
+  ]
 
 export function Portal() {
     const [state, setState] = useState(0);
@@ -20,7 +48,7 @@ export function Portal() {
 
         setTimeout(() => {
             router.push('/home');
-        }, 1150);
+        }, 1000);
     };
 
     setTimeout(() => {
@@ -60,15 +88,17 @@ export function Portal() {
                 style={{
                     clipPath: `circle(${getPortalRadius()} at 67vw 56.5vh)`,
                     transition: 'clip-path 1s ease-out 0.15s',
-                    background: "radial-gradient(circle, hsl(210, 70%, 25%) 0%, hsl(220, 65%, 20%) 100%)",
+                    background: "radial-gradient(circle, hsl(210, 70%, 25%) 0%, hsl(230, 65%, 28%) 100%)",
                 }}
                 onClick={handleClick}
                 onMouseEnter={() => state === 1 && setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
+                <div className="flex w-full justify-center py-4">
+                    <Navbar items={navItems} selected={'home'}/>
+                </div>
                 <div id="content" className="absolute inset-0 flex flex-auto flex-col min-h-screen text-white justify-center">
-                    <Home />
-                    <Navbar />
+                    <Home className="min-h-screen"/>
                 </div>
             </div>
         </div>

@@ -41,7 +41,7 @@ export function SpinningSquare({ children, className="", block }) {
                             transform: translate(0, 0);
                         }
                         to {
-                            transform: translate(58.5vw, 30vh) rotate(-15deg);
+                            transform: translate(58.5vw, 28vh) rotate(-15deg);
                         }
                     }
                     @keyframes final-location-2 {
@@ -49,7 +49,7 @@ export function SpinningSquare({ children, className="", block }) {
                             transform: translate(0, 0);
                         }
                         to {
-                            transform: translate(-24vw, 30vh) rotate(15deg);
+                            transform: translate(-24vw, 28vh) rotate(15deg);
                         }
                     }
                     @keyframes final-location-3 {
