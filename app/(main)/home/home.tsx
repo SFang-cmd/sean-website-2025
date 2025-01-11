@@ -10,7 +10,7 @@ export function Home({ className }) {
                     <h1 style={{ fontSize: "40vh" }} className={`flex justify-center antialiased ml-[-3vw] mt-[-5vh] ${comforter.className}`}>Sean</h1>
                 </div>
                 <div id="cta" className="justify-center flex flex-col items-center">
-                    <h2 style={{ fontSize: "2.5vh", maxWidth: "50vh" }} className={`flex text-center font-light ${karla.className}`}>I want to craft technological experiences that’ll impact others.</h2>
+                    <h2 style={{ fontSize: "2.5vh", maxWidth: "50vh" }} className={`flex text-center font-light ${karla.className}`}>I aspire to build impactful projects.</h2>
                     <div className="flex justify-center mt-[2vh] animate-bounce">
                         <svg 
                             width="10vh" 

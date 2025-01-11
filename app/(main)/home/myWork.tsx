@@ -1,77 +1,123 @@
 import { karla } from '../../ui/fonts'
 
+function ProjectCard({ project, description, link, source, badge, tinyButton, className, badgeClass, sourceClass }) {
+    const handleCardClick = () => {
+        window.open(link, '_blank', 'noopener,noreferrer');
+    };
+
+    const handleSourceClick = (e) => {
+        e.stopPropagation();
+        window.open(source, '_blank', 'noopener,noreferrer');
+    };
+
+    return(
+        <a
+            href={source}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleCardClick}
+            className={`relative max-lg:row-start-1 absolute inset-px rounded-[3rem] ${className}`}
+        >
+            <div className="relative flex h-full flex-col px-10 py-8 max-lg:rounded-t-[calc(2rem+1px)]">
+                <div className="flex items-center justify-between">
+                    <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ${badgeClass}`}>{badge}</span>
+                    <div
+                        onClick={handleSourceClick}
+                        className={`flex items-center justify-center rounded-md border px-2 py-1 border-transparent  font-light text-white text-xs ${sourceClass}`}
+                    >
+                        {tinyButton}
+                    </div>
+                </div>
+                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">{project}</p>
+                <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                    {description}
+                </p>
+            </div>
+        </a>
+    )
+}
+
 export default function ProjectGrid() {
     return (
         <div className="flex flex-col w-3/4 p-4">
         {/* First row */}
             <div className="grid grid-cols-3 gap-4 mb-4">
-            {/* Square card */}
-                <div className="relative max-lg:row-start-1">
-                    <a href="https://github.com/SFang-cmd/StudiApp" target="_blank">
-                        <div className="absolute inset-px rounded-[3rem] bg-blue-100 hover:bg-blue-200"></div>
-                            <div className="relative flex h-full flex-col rounded-[3rem] max-lg:rounded-t-[calc(2rem+1px)] hover:bg-blue-200">
-                                <div className="px-8 sm:px-10 sm:pt-8">
-                                    <div className="flex items-center justify-between">
-                                        <span className="inline-flex items-center rounded-md bg-[#FFE5EA] px-2 py-1 text-xs font-medium text-[#C33C54] ring-1 ring-inset ring-[#C33C54]">Current Project</span>
-                                        <a
-                                            className="flex items-center justify-center rounded-md border px-2 py-1 border-transparent bg-blue-500 font-light text-white text-xs hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
-                                            href="https://github.com/SFang-cmd/StudiApp"
-                                            target="_blank"
-                                        >
-                                            Source Code
-                                        </a>
-                                    </div>
-                                    <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">StudiApp</p>
-                                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                                        Ace your SATs with StudiApp's interactive lessons, realistic questions, and real-time progress tracking. Unlock badges and achieve your dream SAT score!
-                                    </p>
-                                </div>
-                            <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 sm:px-10 pb-10">
-                                <svg width="200" height="140" viewBox="0 0 50 35" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                                    <g>
-                                        <title>Layer 1</title>
-                                        <rect x="-5" y="0.09091" id="svg_1" fill="#2A2A2A" height="35" width="50"/>
-                                        <rect stroke="null" id="svg_2" fill="#1A1A1A" height="6" width="100"/>
-                                        <circle id="svg_3" fill="#FF5F56" r="1" cy="3" cx="4"/>
-                                        <circle id="svg_4" fill="#FFBD2E" r="1" cy="3" cx="7"/>
-                                        <circle id="svg_5" fill="#27C93F" r="1" cy="3" cx="10"/>
-                                        <rect stroke="null" id="svg_6" fill="#FFFFFF" height="29" width="100" y="6"/>
-                                        <rect stroke="null" id="svg_7" fill="#E0E0E0" rx="0.5" height="3" width="80" y="9.09091" x="5"/>
-                                        <rect id="svg_8" stroke-width="0.2" stroke="#E0E0E0" fill="#F5F5F5" rx="1" height="20" width="80" y="13.09091" x="5"/>
-                                        <rect id="svg_9" stroke-width="0.2" stroke="#E0E0E0" fill="#FFFFFF" rx="0.5" height="7" width="37" y="15.09091" x="7"/>
-                                        <circle id="svg_10" fill="#E0E0E0" r="1" cy="18.59091" cx="9"/>
-                                        <rect id="svg_11" fill="#E0E0E0" rx="0.3" height="2" width="30" y="17.59091" x="11"/>
-                                        <rect id="svg_12" stroke-width="0.2" stroke="#E0E0E0" fill="#FFFFFF" rx="0.5" height="7" width="37" y="15.09091" x="46"/>
-                                        <circle id="svg_13" fill="#E0E0E0" r="1" cy="18.59091" cx="48"/>
-                                        <rect id="svg_14" fill="#E0E0E0" rx="0.3" height="2" width="30" y="17.59091" x="50"/>
-                                        <rect id="svg_15" stroke-width="0.2" stroke="#E0E0E0" fill="#FFFFFF" rx="0.5" height="7" width="37" y="24.09091" x="7"/>
-                                        <circle id="svg_16" fill="#E0E0E0" r="1" cy="27.59091" cx="9"/>
-                                        <rect id="svg_17" fill="#E0E0E0" rx="0.3" height="2" width="30" y="26.59091" x="11"/>
-                                        <rect id="svg_18" stroke-width="0.2" stroke="#E0E0E0" fill="#FFFFFF" rx="0.5" height="7" width="37" y="24.09091" x="46"/>
-                                        <circle id="svg_19" fill="#E0E0E0" r="1" cy="27.59091" cx="48"/>
-                                        <rect id="svg_20" fill="#E0E0E0" rx="0.3" height="2" width="30" y="26.59091" x="50"/>
-                                    </g>
-                                </svg>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            {/* Wide card spanning 2 columns */}
-                <div className="bg-blue-100 rounded-lg p-4 col-span-2">
-                    Wide Card 1
-                </div>
+            {/* StudiApp */}
+                <ProjectCard 
+                    project="StudiApp"
+                    description="Ace your SATs with my current in-development app, StudiApp. Unlock badges and achieve your dream SAT score with interactive lessons, realistic questions, and real-time progress tracking!"
+                    link="https://github.com/SFang-cmd/StudiApp"
+                    source="https://github.com/SFang-cmd/StudiApp"
+                    badge="Current Project"
+                    tinyButton="Source Code"
+                    className="bg-blue-200 hover:bg-blue-300"
+                    badgeClass="bg-[#FFE5EA] text-[#C33C54] ring-[#C33C54]"
+                    sourceClass="bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+                />
+            {/* Nanoneuro */}
+                <ProjectCard 
+                    project="Nanoneuro Systems"
+                    description="I'm currently developing software that'll power the future semiconductors of tomorrow. Check out my startup, where we're designing biological semiconductors built on human brain neurons."
+                    link="https://www.f6s.com/company/nanoneuro-systems#people"
+                    source="https://www.nanoneuro.systems/"
+                    badge="Startup Cofounder"
+                    tinyButton="About"
+                    className="bg-purple-200 hover:bg-purple-300"
+                    badgeClass="bg-gray-200 text-gray-600 ring-gray-600"
+                    sourceClass="bg-purple-400 hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-700 focus:ring-offset-2"
+                />
+            {/* Fitalyst */}
+                <ProjectCard 
+                    project="Dash by Fitalyst"
+                    description="See important work due and upcoming events in one place. Dash is a smart home page with a timer and smart assistant for students to stay on top of their game."
+                    link="https://www.fitalyst.com/"
+                    source="https://github.com/SFang-cmd/DashDocumentAssistant"
+                    badge="Startup Intern"
+                    tinyButton="Demo Code"
+                    className="bg-green-200 hover:bg-green-300"
+                    badgeClass="bg-[#ffdecc] text-[#F68E4E] ring-[#F68E4E]"
+                    sourceClass="bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2"
+                />
             </div>
 
         {/* Second row */}
             <div className="grid grid-cols-3 gap-4">
-            {/* Wide card spanning 2 columns */}
-                <div className="bg-orange-100 rounded-lg p-4 col-span-2">
-                    Wide Card 2
-                </div>
-            {/* Square card */}
-                <div className="bg-green-100 rounded-lg p-4">
-                    Square 2
-                </div>
+                {/* Headline Predictor */}
+                <ProjectCard 
+                    project="NBC or Fox? Headline Predictor"
+                    description="Want to know whether your headline is in the style of NBC or Fox News? Try my machine learning model trained on over 600k headlines. It placed 3rd in a machine learning course competition."
+                    link="https://colab.research.google.com/drive/1HtbPyO1BdONt4ouuKvkmwBaVSeMigInp?usp=sharing"
+                    source="https://drive.google.com/file/d/1ln_d7tB1m5HJBgU8C2ixSHJMmBBuJP3N/view?usp=sharing"
+                    badge="Course Final Project"
+                    tinyButton="Final Report"
+                    className="bg-red-100 hover:bg-red-200"
+                    badgeClass="bg-blue-100 text-blue-500 ring-blue-500"
+                    sourceClass="bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2"
+                />
+                {/* Reels Maker */}
+                <ProjectCard 
+                    project="Instagram Reels Maker"
+                    description="Create your own Instagram Reels storytime with this python app. I was just bored one day, maybe this'll make you less bored?"
+                    link="https://github.com/SFang-cmd/ReelsMaker"
+                    source="https://github.com/SFang-cmd/ReelsMaker"
+                    badge="Passion Project"
+                    tinyButton="Source Code"
+                    className="bg-blue-100 hover:bg-blue-200"
+                    badgeClass="bg-[#FFE5EA] text-[#C33C54] ring-[#C33C54]"
+                    sourceClass="bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+                />
+                {/* Minesweeper */}
+                <ProjectCard 
+                    project="Minesweeper"
+                    description="Do you even need to know more? It's Minesweeper. In Java. With a lot of features. Play it now!"
+                    link="https://github.com/SFang-cmd/minesweeper/releases/tag/v1"
+                    source="https://github.com/SFang-cmd/minesweeper"
+                    badge="Course Final Project"
+                    tinyButton="Source Code"
+                    className="bg-red-100 hover:bg-red-200"
+                    badgeClass="bg-blue-100 text-blue-500 ring-blue-500"
+                    sourceClass="bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2"
+                />
             </div>
         </div>
     )
