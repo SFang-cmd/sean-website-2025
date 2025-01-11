@@ -8,40 +8,49 @@ export default function ProjectGrid() {
             {/* Square card */}
                 <div className="relative max-lg:row-start-1">
                     <a href="https://github.com/SFang-cmd/StudiApp" target="_blank">
-                        <div className="absolute inset-px rounded-lg bg-[#DDFBFF] max-lg:rounded-t-[2rem]"></div>
-                            <div className="relative flex h-full flex-col rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+                        <div className="absolute inset-px rounded-[3rem] bg-blue-100 hover:bg-blue-200"></div>
+                            <div className="relative flex h-full flex-col rounded-[3rem] max-lg:rounded-t-[calc(2rem+1px)] hover:bg-blue-200">
                                 <div className="px-8 sm:px-10 sm:pt-8">
-                                    <span className="inline-flex items-center rounded-md bg-[#FFE5EA] px-2 py-1 text-xs font-medium text-[#C33C54] ring-1 ring-inset ring-[#C33C54]">Current Project</span>
-                                    <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Studi App</p>
+                                    <div className="flex items-center justify-between">
+                                        <span className="inline-flex items-center rounded-md bg-[#FFE5EA] px-2 py-1 text-xs font-medium text-[#C33C54] ring-1 ring-inset ring-[#C33C54]">Current Project</span>
+                                        <a
+                                            className="flex items-center justify-center rounded-md border px-2 py-1 border-transparent bg-blue-500 font-light text-white text-xs hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
+                                            href="https://github.com/SFang-cmd/StudiApp"
+                                            target="_blank"
+                                        >
+                                            Source Code
+                                        </a>
+                                    </div>
+                                    <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">StudiApp</p>
                                     <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                                        Ace your SATs with Studi App's interactive lessons, realistic questions, and real-time progress tracking. Unlock badges and achieve your dream SAT score!
+                                        Ace your SATs with StudiApp's interactive lessons, realistic questions, and real-time progress tracking. Unlock badges and achieve your dream SAT score!
                                     </p>
                                 </div>
-                            <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-5 max-lg:pt-10 sm:px-10 lg:pb-8">
-                                {/* SVG Header */}
-                                <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                                    {/* Background */}
-                                    <rect x="0" y="0" width="100" height="100" fill="#2A2A2A"/>
-                                    
-                                    {/* Window */}
-                                    <rect x="0" y="0" width="100" height="8" fill="#1A1A1A"/>
-                                    
-                                    {/* Traffic Lights */}
-                                    <circle cx="4" cy="4" r="1" fill="#FF5F56"/>
-                                    <circle cx="7" cy="4" r="1" fill="#FFBD2E"/>
-                                    <circle cx="10" cy="4" r="1" fill="#27C93F"/>
-                                    
-                                    {/* Menu Button */}
-                                    <rect x="2" y="10" width="4" height="0.5" fill="#808080"/>
-                                    <rect x="2" y="11.5" width="4" height="0.5" fill="#808080"/>
-                                    <rect x="2" y="13" width="4" height="0.5" fill="#808080"/>
-                                    
-                                    {/* Dropdown */}
-                                    <rect x="90" y="10" width="8" height="3" rx="0.5" ry="0.5" fill="#333333"/>
-                                    <path d="M96 11.5 L97 12.5 L95 12.5 Z" fill="#808080"/>
-                                    
-                                    {/* Content Area*/}
-                                    <rect x="0" y="16" width="101" height="84" fill="#FFFFFF"/>
+                            <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 sm:px-10 pb-10">
+                                <svg width="200" height="140" viewBox="0 0 50 35" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <g>
+                                        <title>Layer 1</title>
+                                        <rect x="-5" y="0.09091" id="svg_1" fill="#2A2A2A" height="35" width="50"/>
+                                        <rect stroke="null" id="svg_2" fill="#1A1A1A" height="6" width="100"/>
+                                        <circle id="svg_3" fill="#FF5F56" r="1" cy="3" cx="4"/>
+                                        <circle id="svg_4" fill="#FFBD2E" r="1" cy="3" cx="7"/>
+                                        <circle id="svg_5" fill="#27C93F" r="1" cy="3" cx="10"/>
+                                        <rect stroke="null" id="svg_6" fill="#FFFFFF" height="29" width="100" y="6"/>
+                                        <rect stroke="null" id="svg_7" fill="#E0E0E0" rx="0.5" height="3" width="80" y="9.09091" x="5"/>
+                                        <rect id="svg_8" stroke-width="0.2" stroke="#E0E0E0" fill="#F5F5F5" rx="1" height="20" width="80" y="13.09091" x="5"/>
+                                        <rect id="svg_9" stroke-width="0.2" stroke="#E0E0E0" fill="#FFFFFF" rx="0.5" height="7" width="37" y="15.09091" x="7"/>
+                                        <circle id="svg_10" fill="#E0E0E0" r="1" cy="18.59091" cx="9"/>
+                                        <rect id="svg_11" fill="#E0E0E0" rx="0.3" height="2" width="30" y="17.59091" x="11"/>
+                                        <rect id="svg_12" stroke-width="0.2" stroke="#E0E0E0" fill="#FFFFFF" rx="0.5" height="7" width="37" y="15.09091" x="46"/>
+                                        <circle id="svg_13" fill="#E0E0E0" r="1" cy="18.59091" cx="48"/>
+                                        <rect id="svg_14" fill="#E0E0E0" rx="0.3" height="2" width="30" y="17.59091" x="50"/>
+                                        <rect id="svg_15" stroke-width="0.2" stroke="#E0E0E0" fill="#FFFFFF" rx="0.5" height="7" width="37" y="24.09091" x="7"/>
+                                        <circle id="svg_16" fill="#E0E0E0" r="1" cy="27.59091" cx="9"/>
+                                        <rect id="svg_17" fill="#E0E0E0" rx="0.3" height="2" width="30" y="26.59091" x="11"/>
+                                        <rect id="svg_18" stroke-width="0.2" stroke="#E0E0E0" fill="#FFFFFF" rx="0.5" height="7" width="37" y="24.09091" x="46"/>
+                                        <circle id="svg_19" fill="#E0E0E0" r="1" cy="27.59091" cx="48"/>
+                                        <rect id="svg_20" fill="#E0E0E0" rx="0.3" height="2" width="30" y="26.59091" x="50"/>
+                                    </g>
                                 </svg>
                             </div>
                         </div>
@@ -71,7 +80,7 @@ export default function ProjectGrid() {
 
 export function MyWork({ className }) {
     return (
-        <div className={`flex flex-col justify-center items-center ${className}`}>
+        <div className={`flex flex-col justify-center items-center mt-[10vh] ${className}`}>
             <p className="text-center text-8xl font-thin text-white">
                 My Work
             </p>
