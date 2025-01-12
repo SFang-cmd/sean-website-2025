@@ -44,11 +44,10 @@ export default function MainLayout({
     return (
       <LayoutContext.Provider value={{ selected, setSelected }}>
         <main style={{ scrollBehavior: "smooth" }} className="flex flex-auto flex-col antialiased">
-          <div className="flex w-full justify-center py-4">
+          <div className="flex w-full justify-center">
             <Navbar items={navItems} selected={selected}/>
           </div>
           {children}
-          <Footer /> 
         </main>
       </LayoutContext.Provider>
     )

@@ -10,6 +10,9 @@ import { useRef } from 'react';
 import { useCallback } from 'react';
 import {useContext } from 'react';
 import { LayoutContext } from '../layoutContext';
+import { Academics } from './academics';
+import { Resume } from './resume';
+import { Contacts } from './contacts';
 
 function Background({ animationSpeed=0.3, hueRange=10, lightnessRange=8,
     minHue=200, maxHue=230, minLightness=15, maxLightness=35,
@@ -122,23 +125,34 @@ const HomePage: React.FC = () => {
     }
 
     return (
-        <div className="flex flex-auto flex-col min-h-screen text-white justify-center overflow-y-auto">
+        <div className="relative h-screen overflow-y-auto"
+            onScroll={(e) => {
+                const target = e.target as HTMLElement;
+                const scrollPos = target.scrollTop;
+                updateSection({ scrollPos });
+                console.log(scrollPos);
+            }}
+        >
             <Background />
-            <div 
-                className="absolute inset-0"
-                onScroll={(e) => {
-                    const target = e.target as HTMLElement;
-                    const scrollPos = target.scrollTop;
-                    updateSection({ scrollPos });
-                }}
-            >
-                <div id="content" className="flex flex-auto flex-col min-h-screen text-white justify-center">
-                    <section id="home">
-                        <Home className="min-h-screen"/>
-                    </section>
-                    <section id="my-work">
-                        <MyWork className="min-h-screen"/>
-                    </section>
+            <div className="flex flex-col text-white justify-center">
+                <div className="absolute inset-0">
+                    <div id="content" className="flex flex-auto flex-col text-white justify-center">
+                        <section id="home">
+                            <Home className="min-h-screen"/>
+                        </section>
+                        <section id="my-work">
+                            <MyWork className="min-h-screen"/>
+                        </section>
+                        <section id="academics">
+                            <Academics className="min-h-screen"/>
+                        </section>
+                        <section id="resume">
+                            <Resume className="min-h-screen"/>
+                        </section>
+                        <section id="contact">
+                            <Contacts className="min-h-screen"/>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
